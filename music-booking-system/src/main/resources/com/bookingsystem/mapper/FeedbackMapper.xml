@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bookingsystem.mapper.FeedbackMapper">
+
+    <delete id="deleteFeedbacks">
+        DELETE FROM feedbacks WHERE id IN
+        <foreach collection="ids" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    <select id="getAllFeedbacks" resultType="com.bookingsystem.pojo.Feedback">
+        SELECT * FROM feedbacks
+        <where>
+            <if test="feedbackType != null and feedbackType != '' ">
+                feedback_type = #{feedbackType}
+            </if>
+            <if test="status != null">
+                AND status = #{status}
+            </if>
+        </where>
+        ORDER BY created_at DESC
+    </select>
+</mapper>
