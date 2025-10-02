@@ -44,15 +44,7 @@
             <span slot="title">维修管理</span>
           </el-menu-item>
 
-          <el-menu-item index="/admin/roomTypes">
-          <i class="el-icon-office-building"></i>
-          <span>琴房类型管理</span>
-          </el-menu-item>
-
-          <el-menu-item index="/admin/buildings">
-          <i class="el-icon-office-building"></i>
-          <span>建筑管理</span>
-          </el-menu-item>
+          
 
 
         </el-submenu>

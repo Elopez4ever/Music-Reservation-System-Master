@@ -4,7 +4,6 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
-  //前台
   {
     path: '/',
     name: 'home',
@@ -112,11 +111,6 @@ const routes = [
         component: () => import(/* webpackChunkName: "adminReservations" */ '../views/admin/reservations/Index.vue')
       },
       {
-        path: 'roomTypes',
-        name: 'adminRoomTypes',
-        component: () => import(/* webpackChunkName: "adminRoomTypes" */ '../views/admin/roomTypes/Index.vue')
-      },
-      {
         path: 'users',
         name: 'adminUsers',
         component: () => import(/* webpackChunkName: "adminUsers" */ '../views/admin/users/Index.vue')
@@ -125,12 +119,6 @@ const routes = [
         path: 'statistics',
         name: 'adminStatistics',
         component: () => import(/* webpackChunkName: "adminStatistics" */ '../views/admin/statistics/Index.vue')
-      },
-      //建筑类型管理
-      {
-        path: 'buildings',
-        name: 'adminBuildings',
-        component: () => import(/* webpackChunkName: "adminBuildings" */ '../views/admin/buildings/Index.vue')
       },
       {
         path: 'profile',
